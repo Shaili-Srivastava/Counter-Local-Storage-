@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #count{
+            height: 200px;
+            width: 320px;
+            border: 2px solid black;
+            border-radius: 5px;
+            margin: auto;
+            background-color: rgb(167, 224, 234);
+
+        }
+        #h1{
+            height: 50px;
+            width: 280px;
+            border: 2px solid rgb(247, 241, 65);
+            margin: auto;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: rgb(247, 241, 65);
+            color: blue;
+        }
+        #inc{
+            background-color: rgb(23, 122, 128);
+            border: 2px solid rgb(17, 15, 18);
+            padding: 5px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 5px;
+        }
+        #dec{
+            border-radius: 5px;
+            background-color: rgb(23, 122, 128);
+            border: 2px solid rgb(10, 10, 11);
+            padding: 5px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        #down{
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div id="count">
+        <div id="h1">
+            <h1></h1>
+        </div>
+    
+    <div id="down">
+        <button id="inc">INCREMENT (+)</button>
+        <button id="dec">DECREMENT(-)</button>
+    </div> 
+</div>
+    
+      
+   
+</body>
+</html>
+
+<script>
+var count=localStorage.getItem("countervalue")|| 0;
+document.querySelector("h1").innerText = count
+
+document.querySelector("#inc").addEventListener("click" ,myInc)
+function myInc(){
+    count++;
+    document.querySelector("h1").innerText = count;
+    localStorage.setItem("countervalue", count)
+}
+document.querySelector("#dec").addEventListener("click",myDec)
+function myDec(){
+    count--;
+    document.querySelector("h1").innerText =count;
+    localStorage.setItem("countervalue", count)
+}
+
+
+
+
+</script>
